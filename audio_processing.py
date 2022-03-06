@@ -49,9 +49,7 @@ def window_sumsquare(window, n_frames, hop_length=200, win_length=800,
 
 
 def griffin_lim(magnitudes, stft_fn, n_iters=30):
-   _fn: STFT class with transform (STFT) and inverse (ISTFT) methods
-    
-
+ 
     angles = np.angle(np.exp(2j * np.pi * np.random.rand(*magnitudes.size())))
     angles = angles.astype(np.float32)
     angles = torch.autograd.Variable(torch.from_numpy(angles))
